@@ -16,6 +16,10 @@ connection();
 //   useUnifiedTopology : true
 // });
 
+
+//serving static files 
+//app.use(express.static('public'));
+
 //bodyParse setup
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
