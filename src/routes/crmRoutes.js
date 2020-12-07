@@ -13,14 +13,15 @@ const routes = (app) => {
       console.log(`Request type ${req.method}`)
       next();
     },getContacts)
-
+//Post a new contact 
     .post(addNewContact);
 
   app.route('/contact/:contactID')
+  //get a new contact with Id
     .get(getContactWithID)
-
+//update a contact with id
     .put(updateContact)
-
+//delete a specific contact 
     .delete(deleteContact);
   
 }
