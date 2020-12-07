@@ -1,9 +1,24 @@
 import express from "express";
 import routes from "./src/routes/crmRoutes";
+import bodyParser from 'body-parser';
+import connection from './conn'
+require('dotenv').config()
+
 
 const app = express();
-
 const PORT = 5000;
+
+connection();
+
+// mongoose.Promise = global.Promise;
+// mongoose.connect(process.env.MONGODB_CONNECTION , {
+//   useNewUrlParser : true,
+//   useUnifiedTopology : true
+// });
+
+//bodyParse setup
+app.use(bodyParser.urlencoded({extended:true}));
+app.use(bodyParser.json());
 
 routes(app);
 
